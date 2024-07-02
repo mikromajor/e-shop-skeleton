@@ -1,5 +1,6 @@
 const ApiError = require("../error/ApiError");
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 const { Basket, User } = require("../models/models");
 
 class UserController {
@@ -27,6 +28,15 @@ class UserController {
       role,
       password: hashPassword,
     });
+
+    const basket = await Basket.create({ userId: user.id });
+    const token = jwt.sign(
+      { id: user.id, email, role },
+      process.env.SECRET_KEY,
+      { expiresIn: "24h" }
+    );
+
+    return res.json({ token });
   }
 
   async login(req, res) {}
