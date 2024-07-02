@@ -11,10 +11,12 @@ const generateJwt = (id, email, role) => {
   );
 };
 
+//TODO: create function email & password  validation
+
 class UserController {
   async registration(req, res, next) {
     const { email, password, role } = req.body;
-
+    //Todo add email & password  validation
     if (!email || !password) {
       return next(
         ApiError.badRequest(
@@ -49,6 +51,7 @@ class UserController {
 
   async login(req, res, next) {
     const { email, password } = req.body;
+    //Todo add email & password  validation
     const user = await User.findOne({ where: { email } });
     if (!user) {
       return next(
