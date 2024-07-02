@@ -47,16 +47,40 @@ class UserController {
     return res.json({ token });
   }
 
-  async login(req, res) {}
-
-  async check(req, res, next) {
-    const { id } = req.query;
-    if (!id) {
+  async login(req, res, next) {
+    const { email, password } = req.body;
+    const user = await User.findOne({ where: { email } });
+    if (!user) {
       return next(
-        ApiError.badRequest("It is not entered ID")
+        ApiError.internal("User not found ! ! !")
       );
     }
-    res.json(id);
+    let comparePassword = bcrypt.compareSync(
+      password,
+      user.password
+    );
+    if (!comparePassword) {
+      return next(
+        ApiError.internal("Password incorrect ! ! !")
+      );
+    }
+    const token = generateJwt(
+      user.id,
+      user.email,
+      user.role
+    );
+
+    return res.json({ token });
+  }
+
+  async check(req, res, next) {
+    // const { id } = req.query;
+    // if (!id) {
+    //   return next(
+    //     ApiError.badRequest("It is not entered ID")
+    //   );
+    // }
+    // res.json(id);
     // http://localhost:5001/api/user/auth
     //?id=5&message=sashka&my_param=ok
     // const query = req.query;
