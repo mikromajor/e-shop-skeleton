@@ -1,7 +1,33 @@
 const ApiError = require("../error/ApiError");
+const bcrypt = require("bcrypt");
+const { Basket, User } = require("../models/models");
 
 class UserController {
-  async registration(req, res) {}
+  async registration(req, res, next) {
+    const { email, password, role } = req.body;
+
+    if (!email || !password) {
+      return next(
+        ApiError.badRequest(
+          "Email or password are incorrect!!!"
+        )
+      );
+    }
+    const candidate = await User.findOne({
+      where: { email },
+    });
+    if (candidate) {
+      return next(
+        ApiError.badRequest("User with this email exist!!!")
+      );
+    }
+    const hashPassword = await bcrypt.hash(password, 3);
+    const user = await User.create({
+      email,
+      role,
+      password: hashPassword,
+    });
+  }
 
   async login(req, res) {}
 
