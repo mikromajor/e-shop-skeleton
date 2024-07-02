@@ -8,5 +8,5 @@ module.exports = function (err, req, res, next) {
   }
   return res
     .status(500)
-    .json({ message: "непередбачена нами помилка" });
+    .json({ message: "Unexpected error ! ! !" });
 };
