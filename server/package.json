@@ -3,6 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "my_install": {
+    "my_step_1": "npm install express pg pg-hstore sequelize cors dotenv",
+    "my_step_2": "npm install  -D nodemon",
+    "my_step_3": "npm i express-fileupload",
+    "my_step_4": "npm i uuid",
+    "my_step_5": "npm i jsonwebtoken bcrypt"
+  },
   "scripts": {
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,12 +17,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "my_install": {
-    "my_step_1": "npm install express pg pg-hstore sequelize cors dotenv",
-    "my_step_2": "npm install  -D nodemon",
-    "my_step_3": "npm i express-fileupload",
-    "my_step_4": "npm i uuid"
-  },
   "devDependencies": {
     "nodemon": "^3.1.4"
   },
