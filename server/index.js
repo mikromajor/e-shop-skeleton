@@ -5,7 +5,7 @@ const models = require("./models/models");
 const ApiError = require("./error/ApiError");
 const express = require("express");
 const fileUpLoad = require("express-fileupload");
-const sequelize = require("./db");
+const db = require("./db");
 const cors = require("cors");
 const router = require("./routes/index");
 const errorHandler = require("./middleware/ErrorHandlingMiddleware");
@@ -27,8 +27,8 @@ app.get("/", (req, res) => {
 
 const start = async () => {
   try {
-    await sequelize.authenticate();
-    await sequelize.sync();
+    await db.authenticate();
+    await db.sync();
 
     app.listen(PORT, () =>
       console.log(`server started on port ${PORT}`)

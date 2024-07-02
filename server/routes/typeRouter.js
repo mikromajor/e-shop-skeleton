@@ -10,4 +10,10 @@ router.post(
 );
 router.get("/", typeController.getAll);
 
+router.delete(
+  "/",
+  checkRoleMiddleware("ADMIN"),
+  typeController.delete
+);
+
 module.exports = router;
