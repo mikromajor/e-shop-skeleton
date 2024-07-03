@@ -41,7 +41,7 @@ const Device = sequelize.define("device", {
   img: { type: DataTypes.STRING, allowNull: false },
 });
 
-const Category = sequelize.define("type", {
+const Category = sequelize.define("category", {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
