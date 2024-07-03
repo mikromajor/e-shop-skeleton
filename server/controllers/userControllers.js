@@ -1,6 +1,7 @@
 const ApiError = require("../error/ApiError");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const { validationResult } = require("express-validator");
 const { Basket, User } = require("../models/models");
 
 const generateJwt = (id, email, role) => {
@@ -15,16 +16,21 @@ const generateJwt = (id, email, role) => {
 
 class UserController {
   async registration(req, res, next) {
-    const { email, password, role } = req.body;
-    //Todo add email & password  validation
-    //add permission to create role
-    if (!email || !password) {
-      return next(
-        ApiError.badRequest(
-          "Email or password are incorrect!!!"
-        )
-      );
+    let { email, password, role } = req.body;
+    const error = validationResult(req);
+    if (!error.isEmpty()) {
+      return res
+        .status(400)
+        .json({ message: "Validation error =>", error });
     }
+
+    // if (!email || !password) {
+    //   return next(
+    //     ApiError.badRequest(
+    //       "Email or password are incorrect!!!"
+    //     )
+    //   );
+    // }
     const candidate = await User.findOne({
       where: { email },
     });
@@ -34,6 +40,10 @@ class UserController {
       );
     }
     const hashPassword = await bcrypt.hash(password, 3);
+
+    //TODO: it is very simple protection role
+    // role =
+    //   process.env.KEY_ADMIN === role ? "ADMIN" : "USER";
     const user = await User.create({
       email,
       role,
