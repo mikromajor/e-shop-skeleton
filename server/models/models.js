@@ -41,7 +41,7 @@ const Device = sequelize.define("device", {
   img: { type: DataTypes.STRING, allowNull: false },
 });
 
-const Type = sequelize.define("type", {
+const Category = sequelize.define("type", {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -121,14 +121,14 @@ DeviceInfo.belongsTo(Device);
 Device.hasMany(Rating);
 Rating.belongsTo(Device);
 
-Type.hasMany(Device);
-Device.belongsTo(Type);
+Category.hasMany(Device);
+Device.belongsTo(Category);
 
 Brand.hasMany(Device);
 Device.belongsTo(Brand);
 
-Type.belongsToMany(Brand, { through: TypeBrand });
-Brand.belongsToMany(Type, { through: TypeBrand });
+Category.belongsToMany(Brand, { through: TypeBrand });
+Brand.belongsToMany(Category, { through: TypeBrand });
 
 module.exports = {
   User,
@@ -138,6 +138,6 @@ module.exports = {
   Device,
   DeviceInfo,
   Rating,
-  Type,
+  Category,
   TypeBrand,
 };
