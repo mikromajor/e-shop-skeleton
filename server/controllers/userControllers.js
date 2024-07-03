@@ -17,6 +17,7 @@ class UserController {
   async registration(req, res, next) {
     const { email, password, role } = req.body;
     //Todo add email & password  validation
+    //add permission to create role
     if (!email || !password) {
       return next(
         ApiError.badRequest(
