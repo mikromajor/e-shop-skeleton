@@ -1,7 +1,7 @@
 const { Category } = require("../models/models"); // db
 const ApiError = require("../error/ApiError");
 
-class TypeController {
+class CategoryController {
   async create(req, res) {
     const { name } = req.body; // POST has body
     const category = await Category.create({ name });
@@ -31,4 +31,4 @@ class TypeController {
     return res.json(types);
   }
 }
-module.exports = new TypeController();
+module.exports = new CategoryController();

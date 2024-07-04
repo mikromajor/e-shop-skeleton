@@ -8,9 +8,9 @@ router.post(
   authMiddleware("ADMIN"),
   brandController.create
 );
-router.get("/", brandController.getAll);
-
 router.get("/:name", brandController.getOne);
+
+router.get("/", brandController.getAll);
 
 router.delete(
   "/",
