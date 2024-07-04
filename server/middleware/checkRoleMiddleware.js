@@ -16,7 +16,7 @@ module.exports = function (role) {
         token,
         process.env.SECRET_KEY
       );
-      if (decoded.role !== role) {
+      if (role && decoded.role !== role) {
         res
           .status(403)
           .json({ message: "You don't have access ! ! !" });

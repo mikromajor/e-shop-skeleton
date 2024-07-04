@@ -12,8 +12,6 @@ const generateJwt = (id, email, role) => {
   );
 };
 
-//TODO: create function email & password  validation
-
 class UserController {
   async registration(req, res, next) {
     let { email, password, role } = req.body;
