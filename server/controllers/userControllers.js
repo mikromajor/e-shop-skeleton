@@ -19,18 +19,12 @@ class UserController {
     let { email, password, role } = req.body;
     const error = validationResult(req);
     if (!error.isEmpty()) {
-      return res
-        .status(400)
-        .json({ message: "Validation error =>", error });
+      return res.status(400).json({
+        message:
+          "Validation error, email or password are incorrect",
+        error,
+      });
     }
-
-    // if (!email || !password) {
-    //   return next(
-    //     ApiError.badRequest(
-    //       "Email or password are incorrect!!!"
-    //     )
-    //   );
-    // }
     const candidate = await User.findOne({
       where: { email },
     });
@@ -41,9 +35,9 @@ class UserController {
     }
     const hashPassword = await bcrypt.hash(password, 3);
 
-    //TODO: it is very simple protection role
-    // role =
-    //   process.env.KEY_ADMIN === role ? "ADMIN" : "USER";
+    //TODO: it is very simple protection admin registration
+    role =
+      process.env.ADMIN_ROLE === role ? "ADMIN" : "USER";
     const user = await User.create({
       email,
       role,
