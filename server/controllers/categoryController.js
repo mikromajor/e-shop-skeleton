@@ -4,14 +4,22 @@ const ApiError = require("../error/ApiError");
 class TypeController {
   async create(req, res) {
     const { name } = req.body; // POST has body
-    const type = await Category.create({ name });
-    return res.json(type);
+    const category = await Category.create({ name });
+    return res.json(category);
   }
 
   async getAll(req, res) {
     //GET req does not have body
-    const types = await Category.findAll();
-    return res.json(types);
+    const category = await Category.findAll();
+    return res.json(category);
+  }
+
+  async getOne(req, res) {
+    const { name } = req.params;
+    const category = await Category.findOne({
+      where: { name },
+    });
+    return res.json(category);
   }
 
   async delete(req, res) {

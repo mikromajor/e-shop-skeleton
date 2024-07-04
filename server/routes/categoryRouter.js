@@ -10,6 +10,8 @@ router.post(
 );
 router.get("/", categoryController.getAll);
 
+router.get("/:name", categoryController.getOne);
+
 router.delete(
   "/",
   authMiddleware("ADMIN"),

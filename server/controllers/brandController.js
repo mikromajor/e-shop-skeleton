@@ -13,6 +13,14 @@ class BrandController {
     return res.json(brands);
   }
 
+  async getOne(req, res) {
+    const { name } = req.params;
+    const device = await Brand.findOne({
+      where: { name },
+    });
+    return res.json(device);
+  }
+
   async delete(req, res) {
     const { name } = req.body; //DELETE has body
     await Brand.destroy({

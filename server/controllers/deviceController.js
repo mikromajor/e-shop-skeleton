@@ -6,7 +6,8 @@ const path = require("path");
 class DeviceController {
   async create(req, res, next) {
     try {
-      let { name, price, typeId, brandId, info } = req.body;
+      let { name, price, categoryId, brandId, info } =
+        req.body;
       const { img } = req.files;
       const fileName = uuid.v4() + ".jpg";
       // img.mv("C/users/...");
@@ -17,7 +18,7 @@ class DeviceController {
       const device = await Device.create({
         name,
         price,
-        typeId,
+        categoryId,
         brandId,
         img: fileName,
       });
@@ -40,35 +41,36 @@ class DeviceController {
   }
 
   async getAll(req, res) {
-    let { brandId, typeId, limit, page } = req.query; // let распостраняется на елементы обьекта
+    let { brandId, categoryId, limit, page } = req.query; // let распостраняется на елементы обьекта
 
-    limit = limit || 5;
+    limit = limit || 5; // default val=5
     page = page || 1;
     let devices;
-    let offset = limit * page - limit; // skip пропускаем количество товаров
-    if (!brandId && !typeId) {
+    let offset = limit * page - limit; // skip devices
+
+    if (!brandId && !categoryId) {
       devices = await Device.findAndCountAll({
         limit,
         offset,
       });
     }
-    if (brandId && !typeId) {
+    if (brandId && !categoryId) {
       devices = await Device.findAndCountAll({
         where: { brandId },
         limit,
         offset,
       });
     }
-    if (!brandId && typeId) {
+    if (!brandId && categoryId) {
       devices = await Device.findAndCountAll({
-        where: { typeId },
+        where: { categoryId },
         limit,
         offset,
       });
     }
-    if (brandId && typeId) {
+    if (brandId && categoryId) {
       devices = await Device.findAndCountAll({
-        where: { brandId, typeId },
+        where: { brandId, categoryId },
         limit,
         offset,
       });
