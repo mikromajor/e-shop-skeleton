@@ -1,12 +1,12 @@
 //do not forget enter cd ./server
-//видео 50:38
+
 require("dotenv").config();
 const models = require("./models/models");
 const ApiError = require("./error/ApiError");
 const express = require("express");
 const fileUpLoad = require("express-fileupload");
 const db = require("./db");
-const cors = require("cors");
+const cors = require("cors"); //для того чтобы могли отправлять запросы с браузера
 const router = require("./routes/index");
 const errorHandler = require("./middleware/ErrorHandlingMiddleware");
 const path = require("path");

@@ -67,14 +67,14 @@ const Brand = sequelize.define("brand", {
   },
 });
 
-const TypeBrand = sequelize.define("type_brand", {
+// additional table because relation many to many
+const CategoryBrand = sequelize.define("category_brand", {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
   },
-}); // additional table because relation many to many
-
+});
 const Rating = sequelize.define("rating", {
   id: {
     type: DataTypes.INTEGER,
@@ -127,8 +127,8 @@ Device.belongsTo(Category);
 Brand.hasMany(Device);
 Device.belongsTo(Brand);
 
-Category.belongsToMany(Brand, { through: TypeBrand });
-Brand.belongsToMany(Category, { through: TypeBrand });
+Category.belongsToMany(Brand, { through: CategoryBrand });
+Brand.belongsToMany(Category, { through: CategoryBrand });
 
 module.exports = {
   User,
@@ -139,5 +139,5 @@ module.exports = {
   DeviceInfo,
   Rating,
   Category,
-  TypeBrand,
+  CategoryBrand,
 };
