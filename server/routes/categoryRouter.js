@@ -1,18 +1,18 @@
 const Router = require("express");
 const router = new Router();
 const categoryController = require("../controllers/categoryController");
-const checkRoleMiddleware = require("../middleware/checkRoleMiddleware");
+const authMiddleware = require("../middleware/authMiddleware");
 
 router.post(
   "/",
-  checkRoleMiddleware("ADMIN"),
+  authMiddleware("ADMIN"),
   categoryController.create
 );
 router.get("/", categoryController.getAll);
 
 router.delete(
   "/",
-  checkRoleMiddleware("ADMIN"),
+  authMiddleware("ADMIN"),
   categoryController.delete
 );
 
