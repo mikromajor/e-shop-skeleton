@@ -1,3 +1,3 @@
 export const Auth = () => {
-  return <>Authorization</>;
+  return <div>Authorization</div>;
 };

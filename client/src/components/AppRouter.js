@@ -1,30 +1,33 @@
 import React from "react";
-import { Route, Switch, Redirect } from "react-router-dom";
-import { authRoutes, publicRoutes } from "../routs";
+import { Routes, Route, Redirect } from "react-router-dom";
+import { authRoutes, publicRoutes } from "../routes";
+import { Shop } from "../pages";
+import { SHOP_ROUTE } from "../utils/constants";
 
 const AppRouter = () => {
-  let isAuth = false;
+  let isAuth = true;
   return (
-    <Switch>
+    <Routes>
       {isAuth &&
-        authRoutes.map(({ path, Component }, i) => (
+        authRoutes.map(({ path, Component }) => (
           <Route
-            key={path + i + "a"}
+            key={path}
             path={path}
-            component={Component}
+            element={Component}
             exact
           />
         ))}
       {publicRoutes.map(({ path, Component }) => (
         <Route
-          key={path + i + "p"}
+          key={path}
           path={path}
-          component={Component}
+          element={Component}
           exact
         />
       ))}
-      <Redirect to={SHOP_ROUTE} />
-    </Switch>
+      <Route path='*' element={<Shop />} />
+    </Routes>
   );
 };
+
 export default AppRouter;

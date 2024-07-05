@@ -1,3 +1,3 @@
 export const DevicePage = () => {
-  return <>DevicePage</>;
+  return <div>DevicePage</div>;
 };

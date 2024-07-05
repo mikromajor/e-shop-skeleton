@@ -1,3 +1,3 @@
 export const Basket = () => {
-  return <>Basket Page</>;
+  return <div>Basket Page</div>;
 };
