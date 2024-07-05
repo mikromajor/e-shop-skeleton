@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Routes, Route } from "react-router-dom";
 import { authRoutes, publicRoutes } from "../routes";
 import { Shop } from "../pages";
+import { Context } from "../.";
 
 const AppRouter = () => {
+  const { user } = useContext(Context);
+  console.log(user);
+
   let isAuth = true;
   return (
     <Routes>
