@@ -1,8 +1,7 @@
 import React from "react";
-import { Routes, Route, Redirect } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { authRoutes, publicRoutes } from "../routes";
 import { Shop } from "../pages";
-import { SHOP_ROUTE } from "../utils/constants";
 
 const AppRouter = () => {
   let isAuth = true;
