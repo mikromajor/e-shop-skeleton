@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "name": "12pro",
+    "price": "999",
+    "rating": "0",
+    "img": "https://www.google.com/search?newwindow=1&sca_esv=2ff4646b2ce931e1&sxsrf=ADLYWII0rZRmHpOGZY3qiXIN9ng4EalTNA:1720217123573&q=foto+mobile+phone&udm=2&fbs=AEQNm0Bj08puMWKh6PReyCtkVY9drciCEwOpQCVJhxiEIRNdNhW8ftxh5bOBNskNnxWC4i1BN0YpCDVqpWffSzS4fBBdWvx0kn8kbd7-Zb3vQtjVDjY4NDdCIlVuC31HPDyvgadBj0bMOfBpXGrAq1EahTk8dcC71cylUVOyvC_017cR3W1WGLs1CYOjToRthTt_ZeWX6RwvRsNzJRcgMf8aJIDiD0kUDg9_NfLJHPKcntEG3gmS0spreEW87Jx5RaIJyqh8a5kbrqxaCxaKFC3zyFqWMhJxKA&sa=X&ved=2ahUKEwin5NiU9JCHAxXEVfEDHex1DZQQtKgLegQIDxAB&biw=1536&bih=695&dpr=1.25#vhid=ncQfaaR0-0bcnM&vssid=mosaic",
+    "createdAt": "2024-07-04 14:17:26.435+00",
+    "updatedAt": "2024-07-04 14:17:26.435+00",
+    "basketDeviceId": "null",
+    "categoryId": "1",
+    "brandId": "1"
+  },
+  {
+    "id": "2",
+    "name": "13pro",
+    "price": "999",
+    "rating": "0",
+    "img": "https://www.google.com/search?newwindow=1&sca_esv=2ff4646b2ce931e1&sxsrf=ADLYWII0rZRmHpOGZY3qiXIN9ng4EalTNA:1720217123573&q=foto+mobile+phone&udm=2&fbs=AEQNm0Bj08puMWKh6PReyCtkVY9drciCEwOpQCVJhxiEIRNdNhW8ftxh5bOBNskNnxWC4i1BN0YpCDVqpWffSzS4fBBdWvx0kn8kbd7-Zb3vQtjVDjY4NDdCIlVuC31HPDyvgadBj0bMOfBpXGrAq1EahTk8dcC71cylUVOyvC_017cR3W1WGLs1CYOjToRthTt_ZeWX6RwvRsNzJRcgMf8aJIDiD0kUDg9_NfLJHPKcntEG3gmS0spreEW87Jx5RaIJyqh8a5kbrqxaCxaKFC3zyFqWMhJxKA&sa=X&ved=2ahUKEwin5NiU9JCHAxXEVfEDHex1DZQQtKgLegQIDxAB&biw=1536&bih=695&dpr=1.25#vhid=BkL5hyaN2cQBjM&vssid=mosaic",
+    "createdAt": "2024-07-04 14:17:26.435+00",
+    "updatedAt": "2024-07-04 14:17:26.435+00",
+    "basketDeviceId": "null",
+    "categoryId": "1",
+    "brandId": "2"
+  },
+  {
+    "id": "3",
+    "name": "14pro",
+    "price": "999",
+    "rating": "0",
+    "img": "https://www.google.com/search?newwindow=1&sca_esv=2ff4646b2ce931e1&sxsrf=ADLYWII0rZRmHpOGZY3qiXIN9ng4EalTNA:1720217123573&q=foto+mobile+phone&udm=2&fbs=AEQNm0Bj08puMWKh6PReyCtkVY9drciCEwOpQCVJhxiEIRNdNhW8ftxh5bOBNskNnxWC4i1BN0YpCDVqpWffSzS4fBBdWvx0kn8kbd7-Zb3vQtjVDjY4NDdCIlVuC31HPDyvgadBj0bMOfBpXGrAq1EahTk8dcC71cylUVOyvC_017cR3W1WGLs1CYOjToRthTt_ZeWX6RwvRsNzJRcgMf8aJIDiD0kUDg9_NfLJHPKcntEG3gmS0spreEW87Jx5RaIJyqh8a5kbrqxaCxaKFC3zyFqWMhJxKA&sa=X&ved=2ahUKEwin5NiU9JCHAxXEVfEDHex1DZQQtKgLegQIDxAB&biw=1536&bih=695&dpr=1.25#vhid=1ZuJ0r8f8IgS3M&vssid=mosaic",
+    "createdAt": "2024-07-04 14:17:26.435+00",
+    "updatedAt": "2024-07-04 14:17:26.435+00",
+    "basketDeviceId": "null",
+    "categoryId": "1",
+    "brandId": "3"
+  }
+]

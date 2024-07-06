@@ -19,13 +19,16 @@ class BrandController {
   }
 
   async getOne(req, res) {
-    // /brand/bmw
-    // "/:name"
-    //  req.params.name === "bmw"
+    // /brand/bmw/handKey/notHave
+    // "/:name/:key/:val"
+    // const {name, key, val} = req.params
+    //  name === "bmw",  key==="handKey" , val="notHane"
+
     const { name } = req.params;
     const brand = await Brand.findOne({
       where: { name },
     });
+
     return res.json(brand);
   }
 

@@ -8,7 +8,7 @@ router.post(
   authMiddleware("ADMIN"),
   brandController.create
 );
-router.get("/:name", brandController.getOne);
+router.get("/:name/:key/:val", brandController.getOne);
 
 router.get("/", brandController.getAll);
 
