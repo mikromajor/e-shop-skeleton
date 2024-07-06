@@ -5,7 +5,7 @@
   "my_install": {
     "my_step_1": "npm i axios react-router-dom mobx mobx-react-lite",
     "my_step_2": "npm install react-bootstrap bootstrap",
-    "my_step_3": "",
+    "my_step_3": "npm i jwt-decode",
     "my_step_4": "",
     "my_step_5": "",
     "my_step_6": ""
