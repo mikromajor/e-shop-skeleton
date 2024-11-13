@@ -17,7 +17,7 @@ module.exports = new Sequelize(
 //   "shop_5", // Название БД
 //   "postgres", // Пользователь
 
-//   "Mentozavr7891$", // ПАРОЛЬ
+//   "7891$", // ПАРОЛЬ
 //   {
 //     dialect: "postgres",
 //     host: "localhost",
