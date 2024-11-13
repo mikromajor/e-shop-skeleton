@@ -13,3 +13,7 @@
     npm i jsonwebtoken bcrypt
     
     npm i express-validator
+
+    ** To run server: **
+
+npm run dev 
